@@ -3,625 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سبحان الله وبحمده ° سبحان الله العظيم</title>
+  <title> CUL </title>
   <style>
     body {
       font-family: Arial, sans-serif;
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #f5f7fa;
+      background-color: #f9f9f9;
     }
     .container {
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 25px;
+      background-color: white;
+      border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
     h1 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-      text-align: center;
+      color: #344dd3;
+      margin-top: 0;
     }
-    .form-group {
-      margin-bottom: 20px;
+    .video-info {
+      margin-top: 20px;
     }
-    label {
-      display: block;
-      margin-bottom: 8px;
+    .video-title {
+      font-size: 1.4em;
       font-weight: bold;
-      color: #34495e;
+      margin-bottom: 10px;
     }
-    select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 16px;
-      background-color: #f8f9fa;
+    .video-channel {
+      color: #606060;
+      margin-bottom: 15px;
     }
-    button {
-      background-color: #3498db;
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .button {
+      padding: 10px 15px;
+      background-color: #c6adad;
       color: white;
       border: none;
-      padding: 14px 20px;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 10px;
-      width: 100%;
-      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
-    button:hover:not(:disabled) {
-      background-color: #2980b9;
-    }
-    button:disabled {
-      background-color: #cccccc;
-      cursor: not-allowed;
-    }
-    .error {
-      color: #e74c3c;
-      font-size: 14px;
-      margin-top: 5px;
-      display: none;
-    }
-    #results {
-      margin-top: 30px;
-      display: none;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    table, th, td {
-      border: 1px solid #ddd;
-    }
-    th, td {
-      padding: 12px;
-      text-align: left;
-    }
-    th {
-      background-color: #3498db;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    .shift-header {
-      font-weight: bold;
-      color: #2c3e50;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-    .doctor-info {
-      margin-bottom: 5px;
-    }
-    .specialty {
-      color: #7f8c8d;
-      font-style: italic;
-    }
-    .no-results {
-      text-align: center;
-      padding: 20px;
-      color: #7f8c8d;
+    .button:hover {
+      background-color: #054167;
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <h1>سبحان الله</h1>
-  <h1>الحمدلله</h1>
-  <h1>الله اكبر</h1>
+  <h1> شتريد مني بعد </h1>
 
-  <div class="form-group">
-    <label for="day">Select a Day:</label>
-    <select id="day">
-      <option value="">-- Select Day --</option>
-      <option value="monday">Monday</option>
-      <option value="tuesday">Tuesday</option>
-      <option value="wednesday">Wednesday</option>
-      <option value="thursday">Thursday</option>
-      <option value="saturday">Saturday</option>
-    </select>
-    <div class="error" id="day-error">Please select a day</div>
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/gTs2UObnUhE?autoplay=0&rel=0"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <div class="form-group">
-    <label for="group">Select a Group:</label>
-    <select id="group">
-      <option value="">-- Select Group --</option>
-      <option value="M-1">M-1</option>
-      <option value="M-2">M-2</option>
-      <option value="M-3">M-3</option>
-      <option value="M-4">M-4</option>
-      <option value="M-5">M-5</option>
-      <option value="M-6">M-6</option>
-      <option value="M-7">M-7</option>
-      <option value="M-8">M-8</option>
-      <option value="M-9">M-9</option>
-      <option value="M-10">M-10</option>
-      <option value="M-11">M-11</option>
-      <option value="M-12">M-12</option>
-      <option value="M-13">M-13</option>
-      <option value="M-14">M-14</option>
-      <option value="M-15">M-15</option>
-      <option value="M-16">M-16</option>
-    </select>
-    <div class="error" id="group-error">Please select a group</div>
+  <div class="video-info">
+
+    <div class="video-description">
+      سبحان الله وبحمده سبحان الله العظيم
+    </div>
+    <div class="video-stats" style="margin-top: 10px; color: #606060;">
+      <span>سبحان الله</span> • <span>الحمدلله</span> • <span>الله اكبر</span>
+    </div>
   </div>
 
-  <button id="search-btn" disabled>Find Doctor Schedule</button>
 
-  <div id="results">
-    <h2>Schedule for <span id="selected-day"></span>, Group <span id="selected-group"></span></h2>
-    <div id="schedule-content"></div>
-  </div>
 </div>
-
-<script>
-  const daySelect = document.getElementById('day');
-  const groupSelect = document.getElementById('group');
-  const searchBtn = document.getElementById('search-btn');
-  const dayError = document.getElementById('day-error');
-  const groupError = document.getElementById('group-error');
-  const resultsDiv = document.getElementById('results');
-  const selectedDaySpan = document.getElementById('selected-day');
-  const selectedGroupSpan = document.getElementById('selected-group');
-  const scheduleContent = document.getElementById('schedule-content');
-
-  // Doctor specialties mapping
-  const doctorSpecialties = {
-    "Dr. Essawy": "Internal medicine",
-    "Dr. Kassem": "Internal medicine",
-    "Dr. Rana": "Pulmonary",
-    "Dr. Heba": "Nephrology / Dialysis",
-    "Dr. Nawal": "Neuro",
-    "Dr. Elamin": "Cardio",
-    "Dr. Ibrahim": "GIT",
-    "Dr. Haytham": "",
-    "Dr. Norhan": "Inpatient",
-    "Dr. Basant": "Inpatient",
-    "Dr. Abdullah": "",
-    "Dr. Fatima": ""
-  };
-
-  const scheduleData = {
-    monday: {
-      "M-1": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-      "M-9": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-      "M-2": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: []
-      },
-      "M-10": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: []
-      },
-      "M-3": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-11": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-4": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Rana", shift: "2:00 pm - 6:00 pm", specialty: "Pulmonary" }]
-      },
-      "M-12": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Rana", shift: "2:00 pm - 6:00 pm", specialty: "Pulmonary" }]
-      },
-      "M-5": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-13": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-6": {
-        morning: [{ doctor: "Dr. Norhan", shift: "9:00 am - 1:00 pm", specialty: "Inpatient" }],
-        evening: []
-      },
-      "M-14": {
-        morning: [{ doctor: "Dr. Norhan", shift: "9:00 am - 1:00 pm", specialty: "Inpatient" }],
-        evening: []
-      },
-      "M-7": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-15": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-8": {
-        morning: [{ doctor: "Dr. Kassem", shift: "11:00 am - 3:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      },
-      "M-16": {
-        morning: [{ doctor: "Dr. Kassem", shift: "11:00 am - 3:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      }
-    },
-    tuesday: {
-      "M-1": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-      "M-9": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-      "M-2": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: [{ doctor: "Dr. Basant", shift: "3:00 pm - 6:00 pm", specialty: "Inpatient" }]
-      },
-      "M-10": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: [{ doctor: "Dr. Basant", shift: "3:00 pm - 6:00 pm", specialty: "Inpatient" }]
-      },
-      "M-3": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-11": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-4": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Rana", shift: "2:00 pm - 6:00 pm", specialty: "Pulmonary" }]
-      },
-      "M-12": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Rana", shift: "2:00 pm - 6:00 pm", specialty: "Pulmonary" }]
-      },
-      "M-5": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-13": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-7": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-15": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-8": {
-        morning: [{ doctor: "Dr. Kassem", shift: "11:00 am - 3:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      },
-      "M-16": {
-        morning: [{ doctor: "Dr. Kassem", shift: "11:00 am - 3:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      }
-    },
-    wednesday: {
-      // Basic structure for Wednesday data
-      "M-1": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: []
-      },
-      "M-9": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: []
-      },
-      "M-2": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-      "M-10": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-
-      "M-4": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-12": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-5": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-13": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-6": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      },
-      "M-14": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      },
-      "M-7": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-15": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-8": {
-        morning: [],
-        evening: [{ doctor: "Dr. Rana", shift: "4:00 pm - 9:00 pm", specialty: "Pulmonary" }]
-      },
-      "M-16": {
-        morning: [],
-        evening: [{ doctor: "Dr. Rana", shift: "4:00 pm - 9:00 pm", specialty: "Pulmonary" }]
-      }
-      // Other groups would be added as needed
-    },
-    thursday: {
-      // Basic structure for Thursday data
-      "M-1": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: [{ doctor: "Dr. Basant", shift: "3:00 pm - 6:00 pm", specialty: "Inpatient" }]
-      },
-      "M-3": {
-        morning: [],
-        evening: [{ doctor: "Dr. Basant", shift: "3:00 pm - 6:00 pm", specialty: "Inpatient" }]
-      },
-      "M-11": {
-        morning: [],
-        evening: [{ doctor: "Dr. Basant", shift: "3:00 pm - 6:00 pm", specialty: "Inpatient" }]
-      },
-      "M-9": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: []
-      },
-      "M-2": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-      "M-10": {
-        morning: [{ doctor: "Dr. Elamin", shift: "9:00 am - 1:00 pm", specialty: "Cardio" }],
-        evening: [{ doctor: "Dr. Nawal", shift: "4:00 pm - 9:00 pm", specialty: "Neuro" }]
-      },
-      "M-4": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-12": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-5": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-13": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: [{ doctor: "Dr. Heba", shift: "1:00 pm - 5:00 pm", specialty: "Nephrology / Dialysis" }]
-      },
-      "M-6": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      },
-      "M-14": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: [{ doctor: "Dr. Ibrahim", shift: "4:00 pm - 9:00 pm", specialty: "GIT" }]
-      },
-      "M-7": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-15": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: [{ doctor: "Dr. Elamin", shift: "4:00 pm - 9:00 pm", specialty: "Cardio" }]
-      },
-      "M-8": {
-        morning: [],
-        evening: [{ doctor: "Dr. Rana", shift: "4:00 pm - 9:00 pm", specialty: "Pulmonary" }]
-      },
-      "M-16": {
-        morning: [],
-        evening: [{ doctor: "Dr. Rana", shift: "4:00 pm - 9:00 pm", specialty: "Pulmonary" }]
-      }
-
-    },
-    saturday: {
-      // Basic structure for Saturday data
-      "M-1": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: []
-      },
-      "M-9": {
-        morning: [{ doctor: "Dr. Rana", shift: "9:00 am - 1:00 pm", specialty: "Pulmonary" }],
-        evening: []
-      },
-      "M-3": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: []
-      },
-      "M-11": {
-        morning: [{ doctor: "Dr. Essawy", shift: "9:00 am - 1:00 pm", specialty: "Internal medicine" }],
-        evening: []
-      },
-
-      "M-6": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: []
-      },
-      "M-14": {
-        morning: [{ doctor: "Dr. Heba", shift: "8:00 am - 12:00 pm", specialty: "Nephrology / Dialysis" }],
-        evening: []
-      },
-      "M-8": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-16": {
-        morning: [{ doctor: "Dr. Nawal", shift: "9:00 am - 1:00 pm", specialty: "Neuro" }],
-        evening: []
-      },
-      "M-4": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: []
-      },
-      "M-12": {
-        morning: [{ doctor: "Dr. Ibrahim", shift: "9:00 am - 1:00 pm", specialty: "GIT" }],
-        evening: []
-      },
-      "M-7": {
-        morning: [],
-        evening: [{ doctor: "Dr. Norhan", shift: "12:00 pm - 3:00 pm", specialty: "Inpatient" }]
-      },
-      "M-15": {
-        morning: [],
-        evening: [{ doctor: "Dr. Norhan", shift: "12:00 pm - 3:00 pm", specialty: "Inpatient" }]
-      },
-      "M-5": {
-        morning: [],
-        evening: [{ doctor: "Dr. Norhan", shift: "12:00 pm - 3:00 pm", specialty: "Inpatient" }]
-      },
-      "M-13": {
-        morning: [],
-        evening: [{ doctor: "Dr. Norhan", shift: "12:00 pm - 3:00 pm", specialty: "Inpatient" }]
-      },
-
-      // Other groups would be added as needed
-    }
-  };
-
-  function validateForm() {
-    const dayValue = daySelect.value;
-    const groupValue = groupSelect.value;
-
-    // Check if both selections are made
-    if (dayValue && groupValue) {
-      searchBtn.disabled = false;
-      dayError.style.display = 'none';
-      groupError.style.display = 'none';
-    } else {
-      searchBtn.disabled = true;
-
-      // Show specific error messages if needed
-      dayError.style.display = !dayValue ? 'block' : 'none';
-      groupError.style.display = !groupValue ? 'block' : 'none';
-    }
-  }
-
-  function displaySchedule() {
-    const day = daySelect.value;
-    const group = groupSelect.value;
-
-    // Update the header
-    selectedDaySpan.textContent = day.charAt(0).toUpperCase() + day.slice(1);
-    selectedGroupSpan.textContent = group;
-
-    // Clear previous results
-    scheduleContent.innerHTML = '';
-
-    // Check if we have data for this day and group
-    if (scheduleData[day] && scheduleData[day][group]) {
-      const schedule = scheduleData[day][group];
-
-      // Display morning shift
-      if (schedule.morning.length > 0) {
-        const morningHeader = document.createElement('div');
-        morningHeader.className = 'shift-header';
-        morningHeader.textContent = 'Morning Shift';
-        scheduleContent.appendChild(morningHeader);
-
-        const table = document.createElement('table');
-        let tableHTML = `
-                        <tr>
-                            <th>Doctor</th>
-                            <th>Specialty</th>
-                            <th>Shift Time</th>
-                        </tr>
-                    `;
-
-        schedule.morning.forEach(doc => {
-          tableHTML += `
-                            <tr>
-                                <td>${doc.doctor}</td>
-                                <td>${doc.specialty}</td>
-                                <td>${doc.shift}</td>
-                            </tr>
-                        `;
-        });
-
-        table.innerHTML = tableHTML;
-        scheduleContent.appendChild(table);
-      }
-
-      // Display evening shift
-      if (schedule.evening.length > 0) {
-        const eveningHeader = document.createElement('div');
-        eveningHeader.className = 'shift-header';
-        eveningHeader.textContent = 'Evening Shift';
-        scheduleContent.appendChild(eveningHeader);
-
-        const table = document.createElement('table');
-        let tableHTML = `
-                        <tr>
-                            <th>Doctor</th>
-                            <th>Specialty</th>
-                            <th>Shift Time</th>
-                        </tr>
-                    `;
-
-        schedule.evening.forEach(doc => {
-          tableHTML += `
-                            <tr>
-                                <td>${doc.doctor}</td>
-                                <td>${doc.specialty}</td>
-                                <td>${doc.shift}</td>
-                            </tr>
-                        `;
-        });
-
-        table.innerHTML = tableHTML;
-        scheduleContent.appendChild(table);
-      }
-
-      // If no shifts are available
-      if (schedule.morning.length === 0 && schedule.evening.length === 0) {
-        const noSchedule = document.createElement('div');
-        noSchedule.className = 'no-results';
-        noSchedule.textContent = 'No doctors scheduled for this day and group.';
-        scheduleContent.appendChild(noSchedule);
-      }
-    } else {
-      const noSchedule = document.createElement('div');
-      noSchedule.className = 'no-results';
-      noSchedule.textContent = 'انبسط عندك اوف :)';
-      scheduleContent.appendChild(noSchedule);
-    }
-
-    // Show results
-    resultsDiv.style.display = 'block';
-  }
-
-  // Add event listeners
-  daySelect.addEventListener('change', validateForm);
-  groupSelect.addEventListener('change', validateForm);
-
-  searchBtn.addEventListener('click', displaySchedule);
-</script>
 </body>
 </html>
